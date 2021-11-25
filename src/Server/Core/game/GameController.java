@@ -1,5 +1,7 @@
 package Server.Core.game;
 
+//import java.util.LinkedHashMap;
+
 import Server.Core.socket.ServerController;
 
 public class GameController {
@@ -7,6 +9,8 @@ public class GameController {
 	static public boolean answerflag = false;
 	static public boolean gameflag = false;
 	static public String ID;
+//	static LinkedHashMap<String, Integer> clientScore = new LinkedHashMap<String, Integer>();
+	
 	final static String[] CHO = {"ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ", "ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"};
 	static public void firstStart() {
 		for (int i = 0; i < ServerController.List.size(); i++) {
@@ -29,6 +33,7 @@ public class GameController {
 		answer = "aaaaaaaaaaa";
 		for (int i = 0; i < ServerController.List.size(); i++) {
 			ServerController.List.get(i).sendMessage("CHAT:[알림] " + id +" 님이 맞추셨습니다.");
+//			clientScore.put(id, clientScore.get(id) + 1); //타이머 구현 전, 시간 별 가산점 구현X
 		}
 			
 	}
